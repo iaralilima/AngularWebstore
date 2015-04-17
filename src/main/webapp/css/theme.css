@@ -1,0 +1,25 @@
+body,
+html {
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAKklEQVQYlWNgQAOfPn36jy6GAWCK8CpGl8SqGJcJKOKE3ESUm8lSTDQAALHxJlPvmEycAAAAAElFTkSuQmCC);
+}
+#footer {
+	padding: 30px;
+	background-color: #34495E;
+	color: #fff;
+}
+a.logo:link {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.produtos {
+	padding-top: 30px;
+}
+.produto-thumb {
+	margin-bottom: 15px;
+}
+.produto-preco > strong {
+	font-size: 2.5em;
+}
+.navbar {
+    margin-bottom: 0;
+}

@@ -1,20 +1,17 @@
-var app = angular.module('HelloAngular',['ngResource']);
+(function() {
+    
+    var app = angular.module('AngularWebstore',['ngResource']);
 
-app.factory('ContatoDAO', function($resource) {
-   return $resource('/BaseRestAngular/services/contatos',{}, {
-      query: {method: 'GET', isArray:true},
-      create: {method:'POST'}
-   });
-});
+    app.factory('ProdutoDAO', function($resource) {
+       return $resource('/AngularWebstore/services/produtos',{}, {
+          query: {method: 'GET', isArray:true},
+          create: {method:'POST'}
+       });
+    });
 
-app.controller('PrimeiroController' , function($scope, ContatoDAO) {
-  $scope.mensagem = 'Funcionou!';  
-  $scope.contatos = ContatoDAO.query();
-  
-  $scope.adicionarContato = function() {
-    $scope.contatos.push($scope.contato);
-    ContatoDAO.create($scope.contato);
-    $scope.contato = {};
-  }
+    app.controller('ProdutosController', function($scope, ProdutoDAO) {
+        this.produtos = ProdutoDAO.query();
+        console.log(this.produtos[1]);
+    });
 
-});
+})();

@@ -1,8 +1,8 @@
 {
-  "name": "BaseRestAngular",
+  "name": "AngularWebstore",
   "version": "0.0.1",
   "authors": [
-    "Bruno Catao <brunogamacatao@gmail.com>"
+    "Jefferson Neves <jefferson.rpn@gmail.com>"
   ],
   "description": "Projeto base para a construcao de aplicativos utilizando a arquitetura Rest em conjunto com o AngularJS",
   "license": "MIT",
