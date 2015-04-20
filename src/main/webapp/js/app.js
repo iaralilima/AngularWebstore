@@ -11,7 +11,17 @@
 
     app.controller('ProdutosController', function($scope, ProdutoDAO) {
         this.produtos = ProdutoDAO.query();
-        console.log(this.produtos[1]);
+    });
+
+    app.factory('CarrinhoDAO', function($resource) {
+       return $resource('/AngularWebstore/services/carrinho',{}, {
+          query: {method: 'GET', isArray:false},
+          create: {method:'POST'}
+       });
+    });
+
+    app.controller('CarrinhoController', function($scope, CarrinhoDAO) {
+        this.carrinho = CarrinhoDAO.query();
     });
 
 })();

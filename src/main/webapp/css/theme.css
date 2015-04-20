@@ -20,6 +20,15 @@ a.logo:link {
 .produto-preco > strong {
 	font-size: 2.5em;
 }
+a.carrinho: link {
+	padding: 12px 21px 11px
+}
+.icon-carrinho {
+	font-size: 1.5em;
+}
 .navbar {
     margin-bottom: 0;
+}
+.navbar-collapse .navbar-nav.navbar-right:last-child > .dropdown:last-child > a {
+	border-radius: 0;
 }
