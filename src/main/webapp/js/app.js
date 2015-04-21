@@ -2,6 +2,8 @@
     
     var app = angular.module('AngularWebstore',['ngResource']);
 
+    var carrinho = {};
+
     app.factory('ProdutoDAO', function($resource) {
        return $resource('/AngularWebstore/services/produtos',{}, {
           query: {method: 'GET', isArray:true},
@@ -22,6 +24,11 @@
 
     app.controller('CarrinhoController', function($scope, CarrinhoDAO) {
         this.carrinho = CarrinhoDAO.query();
+
+        this.adicionarProduto = function(produto) {
+          this.carrinho.produtos.push(produto);
+          CarrinhoDAO.create(produto);
+        };
     });
 
 })();

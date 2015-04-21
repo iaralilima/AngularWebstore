@@ -101,7 +101,9 @@
                   <img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%">
                   <h3 class="tile-title">{{produto.nome}}</h3>
                   <p class="produto-preco">R$ <strong>{{produto.preco | currency : '' : 2}}</strong></p>
-                  <a class="btn btn-primary btn-large btn-block" href="#">Adicionar ao carrinho</a>
+                  <form ng-controller="CarrinhoController as carrinhoCtrl" ng-submit="carrinhoCtrl.adicionarProduto(produto)">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Adicionar ao carrinho">
+                  </form>
               </div>
               
             </div>
