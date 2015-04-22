@@ -32,4 +32,7 @@ public class CarrinhoDeCompras {
         this.produtos.add(produto);
     }
     
+    public void limpar() {
+        produtos = new ArrayList<Produto>();
+    }
 }

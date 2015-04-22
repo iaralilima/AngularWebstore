@@ -25,10 +25,15 @@ public class CarrinhoDeComprasFacade {
     }
     
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public void adicionarProduto(Produto produto) {
-        //CarrinhoDeComprasDAO.getInstance().adicionarProduto(produto);
+        CarrinhoDeComprasDAO.getInstance().adicionarProduto(produto);
+        System.out.println(produto.toString());
     }
     
+    @POST
+    public void limparCarrinho() {
+        CarrinhoDeComprasDAO.getInstance().limpar();
+    }
 }

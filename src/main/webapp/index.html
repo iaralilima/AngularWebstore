@@ -45,14 +45,15 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle carrinho" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="icon-carrinho glyphicon glyphicon-shopping-cart"></span> 
-                    <span class="label label-danger">{{carrinhoCtrl.carrinho.produtos.length}}</span>
+                    <span class="label label-danger" >{{carrinhoCtrl.carrinho.produtos.length}}</span>
                   </a>
                   <ul class="dropdown-menu" role="menu">
-                    <li ng-repeat="produto in carrinhoCtrl.carrinho.produtos | limitTo:10">
+                    <li ng-repeat="produto in carrinhoCtrl.carrinho.produtos | limitTo:5">
                       <a href="#">{{produto.nome}}</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Finalizar compra</a></li>
+                    <li><a href="#" ng-click="carrinhoCtrl.limparCarrinho()" ><span class="glyphicon glyphicon-remove-circle"></span> Limpar Carrinho</a></li>
                   </ul>
                 </li>
               </ul>
@@ -102,7 +103,7 @@
                   <h3 class="tile-title">{{produto.nome}}</h3>
                   <p class="produto-preco">R$ <strong>{{produto.preco | currency : '' : 2}}</strong></p>
                   <form ng-controller="CarrinhoController as carrinhoCtrl" ng-submit="carrinhoCtrl.adicionarProduto(produto)">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Adicionar ao carrinho">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho + {{carrinhoCtrl.carrinho.produtos.length}}" />    
                   </form>
               </div>
               
