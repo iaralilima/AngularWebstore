@@ -11,7 +11,9 @@ public class CarrinhoDeComprasDAO {
 
     private static CarrinhoDeComprasDAO instance;
     
-    private CarrinhoDeComprasDAO() {}
+    private CarrinhoDeComprasDAO() {
+        this.cadastrarMocks();
+    }
     
     public static CarrinhoDeComprasDAO getInstance() {
         if (instance == null) {
@@ -23,7 +25,7 @@ public class CarrinhoDeComprasDAO {
     private CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
     
     public CarrinhoDeCompras listar() {
-        this.cadastrarMocks();
+//        this.cadastrarMocks();
         return this.carrinho;
     }
     
@@ -49,6 +51,10 @@ public class CarrinhoDeComprasDAO {
         
         this.carrinho.setId(777);
         this.carrinho.setProdutos(produtos);
+    }
+    
+    public void limpar() {
+        carrinho.limpar();
     }
     
 }
