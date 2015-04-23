@@ -17,6 +17,9 @@ a.logo:link {
 .produto-thumb {
 	margin-bottom: 15px;
 }
+.produto-nome {
+	height: 50px;
+}
 .produto-preco > strong {
 	font-size: 2.5em;
 }
