@@ -39,9 +39,9 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle carrinho" data-toggle="dropdown" role="button" aria-expanded="false">
                     <span class="icon-carrinho glyphicon glyphicon-shopping-cart"></span> 
-                    <span class="label label-danger" >{{carrinhoCtrl.carrinho.produtos.length}}</span>
+                    <span class="label label-danger" ng-show="carrinhoCtrl.carrinho.produtos.length">{{carrinhoCtrl.carrinho.produtos.length}}</span>
                   </a>
-                  <ul class="dropdown-menu" role="menu">
+                  <ul class="dropdown-menu" role="menu" ng-show="carrinhoCtrl.carrinho.produtos.length">
                     <li ng-repeat="produto in carrinhoCtrl.carrinho.produtos | limitTo:5">
                       <a href="#">{{produto.nome}}</a>
                     </li>
