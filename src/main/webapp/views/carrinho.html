@@ -1,0 +1,39 @@
+<!-- Carrinho -->
+        <div class="main"ng-controller="CarrinhoController as carrinhoCtrl2">
+
+          <div class="row">
+            <div class="col-xs-4">
+              <h6>Meu carrinho ({{carrinhoCtrl2.carrinho.produtos.length}} itens)</h6>
+            </div>
+            <div class="col-xs-8 text-right">
+              <button type="button" ng-click="carrinhoCtrl2.limparCarrinho()" class="btn btn-link">Limpar carrinho</button>
+              <button type="button" class="btn btn-success">Finalizar compra</button>
+            </div>
+          </div>
+
+          <table class="table table-bordered">
+            <tr>
+              <th>Itens</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+              <th>Subtotal</th>
+            </tr>
+            <tr ng-repeat="produto in carrinhoCtrl2.carrinho.produtos">
+              <td>
+                <div class="row">
+                  <div class="col-xs-3">
+                    <img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%">
+                  </div>
+                  <div class="col-xs-9">
+                    <h6>{{produto.nome}}</h6>
+                  </div>
+                </div>
+              </td>
+              <td>R$&nbsp;{{produto.preco | currency : '' : 2}}</td>
+              <td>c</td>
+              <td>d</td>
+            </tr>
+          </table>
+
+        </div>
+        <!--/ Carrinho -->

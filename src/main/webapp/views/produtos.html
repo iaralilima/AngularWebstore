@@ -1,0 +1,20 @@
+ <!--Produtos--> 
+        <div class="produtos">
+
+          <div ng-controller="ProdutosController as produtos" class="row">
+            <div ng-repeat="produto in produtos.produtos | limitTo:4" class="col-sm-6 col-md-3">
+
+              <div class="tile">
+                  <img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%">
+                  <h3 class="tile-title">{{produto.nome}}</h3>
+                  <p class="produto-preco">R$ <strong>{{produto.preco | currency : '' : 2}}</strong></p>
+                  <form ng-controller="CarrinhoController as carrinhoCtrl" ng-submit="carrinhoCtrl.adicionarProduto(produto)">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho" />    
+                  </form>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+<!--/Produtos-->

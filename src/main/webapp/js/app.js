@@ -1,8 +1,29 @@
 (function() {
     
-    var app = angular.module('AngularWebstore',['ngResource']);
-
-    var carrinho = {};
+    var app = angular.module('AngularWebstore',['ngResource', 'ngRoute']);
+    
+    app.config(function($routeProvider, $locationProvider) {
+       $locationProvider.html5Mode({
+               enabled: true,
+               requireBase: true
+       });
+       
+       $routeProvider
+               .when('/', {
+                   templateUrl:'views/produtos.html',
+                   controller:'ProdutosController'
+                })
+                .when('/carrinho', {
+                    templateUrl:'views/carrinho.html',
+                    controller:'CarrinhoController'
+                })
+                .otherwise ({ redirectTo: '/' });
+    });
+    
+    app.factory('carrinhoCount', function() {
+        var carrinho = {};
+        return carrinho;
+    });
 
     app.factory('ProdutoDAO', function($resource) {
        return $resource('/AngularWebstore/services/produtos',{}, {
@@ -27,18 +48,17 @@
         this.carrinho = CarrinhoDAO.query();
 
         this.adicionarProduto = function(produto) {
-//            this.carrinho.produtos.push("teste");
             CarrinhoDAO.create(produto);
-//          this.carrinho = CarrinhoDAO.query();
-//          console.log(this.carrinho.produtos);
-//          this.carrinho = CarrinhoDAO.query();
-//            this.carrinho.produtos.push(produto);
             console.log(this.carrinho.produtos.push(produto));
         };
         
         this.limparCarrinho = function() {
             CarrinhoDAO.limpar();
             this.carrinho = CarrinhoDAO.query();
+        };
+        
+        $scope.sayHello = function() {
+            $scope.greeting = 'Hello ' + $scope.carrinho.produtos.length + '!';
         };
     });
     

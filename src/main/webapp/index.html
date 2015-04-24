@@ -1,5 +1,6 @@
 <html ng-app="AngularWebstore">
 <head>
+    <base href="/AngularWebstore/">
     <title>Angular Webstore</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,14 +43,16 @@
                     <span class="label label-danger" ng-show="carrinhoCtrl.carrinho.produtos.length">{{carrinhoCtrl.carrinho.produtos.length}}</span>
                   </a>
                   <ul class="dropdown-menu" role="menu" ng-show="carrinhoCtrl.carrinho.produtos.length">
+                      {{carrinhoCtrl.carrinho.produtos.length}}
                     <li ng-repeat="produto in carrinhoCtrl.carrinho.produtos | limitTo:5">
                       <a href="#">{{produto.nome}}</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart"></span> Finalizar compra</a></li>
+                    <li><a href="carrinho"><span class="glyphicon glyphicon-shopping-cart"></span> Finalizar compra</a></li>
                     <li><a href="#" ng-click="carrinhoCtrl.limparCarrinho()" ><span class="glyphicon glyphicon-remove-circle"></span> Limpar Carrinho</a></li>
                   </ul>
                 </li>
+                sdfds
               </ul>
 
             </div><!--/.nav-collapse -->
@@ -85,9 +88,10 @@
               <span class="sr-only">Next</span>
             </a>
         </div><!--/ Carousel -->
-
+        
+        <div ng-view></div>
         <!-- Produtos -->
-        <div class="produtos">
+<!--        <div class="produtos">
 
           <div ng-controller="ProdutosController as produtos" class="row">
             <div ng-repeat="produto in produtos.produtos | limitTo:4" class="col-sm-6 col-md-3">
@@ -97,14 +101,14 @@
                   <h3 class="tile-title">{{produto.nome}}</h3>
                   <p class="produto-preco">R$ <strong>{{produto.preco | currency : '' : 2}}</strong></p>
                   <form ng-controller="CarrinhoController as carrinhoCtrl" ng-submit="carrinhoCtrl.adicionarProduto(produto)">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho + {{carrinhoCtrl.carrinho.produtos.length}}" />    
+                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho" />    
                   </form>
               </div>
               
             </div>
           </div>
           
-        </div>
+        </div>-->
         <!--/ Produtos -->
 
     </div>
@@ -129,10 +133,12 @@
       </div>
     </div>
       
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/controllers.js"></script>
 </body>
 </html>
