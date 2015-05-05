@@ -27,6 +27,9 @@ a.logo:link {
 .produto-preco > strong {
 	font-size: 2.5em;
 }
+.produto-img {
+	padding: 30px;
+}
 a.carrinho: link {
 	padding: 12px 21px 11px
 }

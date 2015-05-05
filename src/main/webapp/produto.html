@@ -56,26 +56,41 @@
           </div><!--/.container-fluid -->
         </nav><!--/ Static navbar -->
         
-        <!-- Produtos -->
-        <div class="produtos">
+        <!-- Produto -->
+        <div class="produto">
 
-          <div ng-controller="ProdutosController as produtos" class="row">
-            <div ng-repeat="produto in produtos.produtos" class="col-sm-6 col-md-3">
+          <h2 class="text-center">Nome do produto</h2>
 
-              <div class="tile">
-                  <img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%">
-                  <h3 class="tile-title produto-nome">{{produto.nome}}</h3>
-                  <p class="produto-preco">R$ <strong>{{produto.preco | currency : '' : 2}}</strong></p>
-                  <form ng-controller="CarrinhoController as carrinhoCtrl" ng-submit="carrinhoCtrl.adicionarProduto(produto)">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho ({{carrinhoCtrl.carrinho.produtos.length}})" />    
-                  </form>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="produto-img">
+                <img src="http://statick3.bseller.com.br/product/57381/3479849_Lef-blo-01w.jpg" alt="Nome do produto" width="100%">
               </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="tile">
+                <p class="produto-preco">R$ <strong>999,99</strong></p>
+                
+                <div class="btn-group">
+                  <a class="btn btn-primary" href="#fakelink">-</a>
+                  <a class="btn btn-primary" href="#fakelink">1</a>
+                  <a class="btn btn-primary" href="#fakelink">+</a>
+                </div>
+                
+                <hr>
 
+                <form>
+                  <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho" />    
+                </form>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <p>Descrição do produto</p>
             </div>
           </div>
           
         </div>
-        <!--/ Produtos -->
+        <!--/ Produto -->
 
     </div>
     <!--/ Main -->

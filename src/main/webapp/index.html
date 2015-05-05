@@ -94,10 +94,10 @@
 
               <div class="tile">
                   <img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%">
-                  <h3 class="tile-title">{{produto.nome}}</h3>
+                  <h3 class="tile-title produto-nome">{{produto.nome}}</h3>
                   <p class="produto-preco">R$ <strong>{{produto.preco | currency : '' : 2}}</strong></p>
                   <form ng-controller="CarrinhoController as carrinhoCtrl" ng-submit="carrinhoCtrl.adicionarProduto(produto)">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho + {{carrinhoCtrl.carrinho.produtos.length}}" />    
+                    <input type="submit" class="btn btn-primary btn-lg btn-block"  value="Adicionar ao carrinho ({{carrinhoCtrl.carrinho.produtos.length}})" />    
                   </form>
               </div>
               
