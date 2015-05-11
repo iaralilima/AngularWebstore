@@ -27,13 +27,8 @@
         this.carrinho = CarrinhoDAO.query();
 
         this.adicionarProduto = function(produto) {
-//            this.carrinho.produtos.push("teste");
-            CarrinhoDAO.create(produto);
-//          this.carrinho = CarrinhoDAO.query();
-//          console.log(this.carrinho.produtos);
-//          this.carrinho = CarrinhoDAO.query();
-//            this.carrinho.produtos.push(produto);
-            console.log(this.carrinho.produtos.push(produto));
+          CarrinhoDAO.create(produto);
+          this.carrinho.produtos.push(produto);
         };
         
         this.limparCarrinho = function() {
@@ -42,6 +37,11 @@
         };
     });
     
-    
+    app.directive('produtoTile', function() {
+      return {
+        restrict: 'A',
+        templateUrl: "inc/produto-tile.html"
+      };
+    });
     
 })();
