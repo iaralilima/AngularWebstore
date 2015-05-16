@@ -1,7 +1,7 @@
 (function() {
     
     var app = angular.module('AngularWebstore',['ngResource', 'ngRoute']);
-    
+    var carrinho = {};
     app.config(function($routeProvider, $locationProvider) {
        $locationProvider.html5Mode({
                enabled: true,
@@ -10,8 +10,7 @@
        
        $routeProvider
                .when('/', {
-                   templateUrl:'views/index.html',
-                   controller:'ProdutosController'
+                   templateUrl:'views/index.html'
                 })
                 .when('/produtos', {
                     templateUrl:'views/produtos.html',
@@ -22,11 +21,6 @@
                     controller:'CarrinhoController'
                 })
                 .otherwise ({ redirectTo: '/' });
-    });
-    
-    app.factory('carrinhoCount', function() {
-        var carrinho = {};
-        return carrinho;
     });
 
     app.factory('ProdutoDAO', function($resource) {
