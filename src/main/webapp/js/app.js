@@ -10,8 +10,12 @@
        
        $routeProvider
                .when('/', {
-                   templateUrl:'views/produtos.html',
+                   templateUrl:'views/index.html',
                    controller:'ProdutosController'
+                })
+                .when('/produtos', {
+                    templateUrl:'views/produtos.html',
+                    controller:'ProdutosController'
                 })
                 .when('/carrinho', {
                     templateUrl:'views/carrinho.html',
