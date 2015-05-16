@@ -2,12 +2,20 @@ package entidades;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * @author Jefferson Neves
  */
+@Entity
 public class Produto {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private int codigo;
     private String nome;
     private String descricao;
@@ -54,6 +62,14 @@ public class Produto {
 
     public void setImagens(List<String> imagens) {
         this.imagens = imagens;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
 }
