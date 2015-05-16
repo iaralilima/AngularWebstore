@@ -1,0 +1,9 @@
+ <!--Produtos--> 
+<div class="produtos">
+
+  <div ng-controller="ProdutosController as produtos" class="row">
+    <div ng-repeat="produto in produtos.produtos | limitTo:4" class="col-sm-6 col-md-3" produto-tile></div>
+  </div>
+  
+</div>
+<!--/Produtos-->
