@@ -16,6 +16,10 @@
                     templateUrl:'views/produtos.html',
                     controller:'ProdutosController'
                 })
+                .when('/produto', {
+                    templateUrl:'views/produto.html',
+                    controller:'ProdutosController'
+                })
                 .when('/carrinho', {
                     templateUrl:'views/carrinho.html',
                     controller:'CarrinhoController'
