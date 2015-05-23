@@ -22,16 +22,18 @@
       <td>
         <div class="row">
           <div class="col-xs-3">
-            <img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%">
+            <a href="produto"><img ng-src="{{produto.imagens[0]}}" alt="{{produto.nome}}" class="produto-thumb" width="100%"></a>
           </div>
           <div class="col-xs-9">
-            <h6>{{produto.nome}}</h6>
+            <a href="produto"><h6>{{produto.nome}}</h6></a>
           </div>
         </div>
       </td>
       <td>R$&nbsp;{{produto.preco | currency : '' : 2}}</td>
-      <td>c</td>
-      <td>d</td>
+      <td>
+        <input type="number" value="1">
+      </td>
+      <td>R$&nbsp;{{produto.preco | currency : '' : 2}}</td>
     </tr>
   </table>
 
